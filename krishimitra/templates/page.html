@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<div class="container">
+        <form method="POST" action="/update" align="center" class="form-inline">{% csrf_token %}
+
+
+
+          {{ form.as_p }}
+
+            <button type="submit" align="centre" class="button button1">Submit</button>
+
+
+
+
+   </form>
+
+    </div>
+ </center>
+</body>
+</html>
