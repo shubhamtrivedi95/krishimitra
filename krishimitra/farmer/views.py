@@ -16,7 +16,7 @@ def post_create(request):
     }
     return render(request,'page.html',context)
 def on(request):
-    print(request.data["From"])
+    print(kwargs.get["From"])
     client.objects.filter(MobileNo=request.data["From"]).update(Enable=1)
 
 def done(request):

@@ -18,7 +18,7 @@ from django.urls import path
 from farmer  import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('on/', views.on),
+   path('on/<slug:MB_No>', views.on),
    # path('off/', views.off),
     path('update', views.post_create),
     path('done',views.done),
