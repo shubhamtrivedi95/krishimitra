@@ -21,6 +21,12 @@ def on(request):
     client.objects.filter(MobileNo=From).update(Enable=1)
     return HttpResponse(From)
 
+def off(request):
+    From=request.GET.get("CallFrom")
+    print(From)
+    client.objects.filter(MobileNo=From).update(Enable=0)
+    return HttpResponse(From)
+
 def done(request):
     return HttpResponse("<h2> Request Accepted.<h2>")
 def welcome(request):

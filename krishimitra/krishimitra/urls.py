@@ -19,7 +19,7 @@ from farmer  import views
 urlpatterns = [
     path('admin/', admin.site.urls),
    path('on/', views.on),
-   # path('off/', views.off),
+   path('off/', views.off),
     path('update', views.post_create),
     path('done',views.done),
     path('',views.welcome),
