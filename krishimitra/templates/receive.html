@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        table, th, td {
+    border:1px solid black;
+    padding: 5px;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    color:black;
+    background-color:white;
+
+}
+
+    </style>
+</head>
+<body>
+<center>
+{% if stack %}
+    <table style="width:100%;  ">
+        <caption><h3><b>Moisture Details</b></h3></caption>
+    <tr>
+        <th> <i>CustmerName</i> </th>
+        <th><i> MobileNo</i></th>
+        <th><i>DeviceId</i></th>
+        <th><i>Enable</i></th>
+    </tr>
+    {% for s in stack %}
+    <tr>
+        <th>{{ s.CustmerName }}</th>
+        <th>{{ s.MobileNo }}</th>
+        <th>{{ s.DeviceId }}</th>
+        <th>{{ s.Enable }}</th>
+    </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No stacks are available.</p>
+{% endif %}
+<form method="GET">
+    <button type="submit" align="centre" formaction="/show" class="button button1">Check</button>
+
+</form>
+</center>
+</body>
+</html>

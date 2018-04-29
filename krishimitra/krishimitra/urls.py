@@ -23,4 +23,5 @@ urlpatterns = [
     path('update', views.post_create),
     path('done',views.done),
     path('',views.welcome),
+    path('show',views.show),
 ]
