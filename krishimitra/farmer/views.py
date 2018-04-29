@@ -33,7 +33,7 @@ def off(request):
     return HttpResponse("<h2> {f} </h2>".format(f=From))
 
 
-def done():
+def done(request):
     return HttpResponse("<h2> Request Accepted.</h2>")
 
 
