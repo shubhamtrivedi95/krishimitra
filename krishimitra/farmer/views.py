@@ -5,6 +5,9 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.template import loader
 import requests
+
+sid = "krishimitra"
+token = "90514427294a84bf7af8bdf334b6941f467f0800"
 from pprint import pprint
 # Create your views here.
 def post_create(request):
@@ -57,14 +60,12 @@ def response(request):
 
 
 def call(request):
-    sid = "krishimitra"
-    token = "90514427294a84bf7af8bdf334b6941f467f0800"
-    customer_no=request.GET.get("To")
-    app_id=str(request.GET.get("AppId"))
+    customer_no = request.GET.get("To")
+    app_id = str(request.GET.get("AppId"))
     print(app_id)
     if not app_id:
-        app_id=170514
-    r=requests.post('https://twilix.exotel.in/v1/Accounts/{sid}/Calls/connect.json'.format(sid=sid),
+        app_id = 170514
+    r = requests.post('https://twilix.exotel.in/v1/Accounts/{sid}/Calls/connect.json'.format(sid=sid),
                         auth=(sid, token),
                         data={
                              'From': customer_no,
@@ -78,3 +79,16 @@ def call(request):
                         })
     return HttpResponse("<html><body><h4> {a} </h4>\r\n <h5> {b} <h5><body></html>".format(a=r.status_code, b=r.json()))
     # pprint(r.json())
+
+def message(request):
+    sms_from="09513886363"
+    sms_to=request.GET.get("To")
+    sms_body= "motor is switched off."
+    r=requests.post('https://twilix.exotel.in/v1/Accounts/{sid}/Sms/send.json'.format(sid=sid),
+                         auth=(sid, token),
+                         data={
+                             'From': sms_from,
+                             'To': sms_to,
+                             'Body': sms_body
+                         })
+    return HttpResponse("<html><body><h4> {a} </h4>\r\n <h5> {b} <h5><body></html>".format(a=r.status_code, b=r.json()))
