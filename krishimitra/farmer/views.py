@@ -16,8 +16,10 @@ def post_create(request):
     }
     return render(request,'page.html',context)
 def on(request):
-    print(kwargs.get["From"])
-    client.objects.filter(MobileNo=request.data["From"]).update(Enable=1)
+    From=request.GET.get("From")
+    print(From)
+    client.objects.filter(MobileNo=From).update(Enable=1)
+    return HttpResponse(From)
 
 def done(request):
     return HttpResponse("<h2> Request Accepted.<h2>")
