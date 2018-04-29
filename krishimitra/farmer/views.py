@@ -37,7 +37,7 @@ def done():
     return HttpResponse("<h2> Request Accepted.</h2>")
 
 
-def welcome():
+def welcome(request):
     return HttpResponse("<h2>Krishimitra </h2>")
 
 
