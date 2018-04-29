@@ -2,25 +2,56 @@
 <html lang="en">
 
 <head>
+    <!--<style>-->
+        <!--table, th, td {-->
+    <!--border:1px solid black;-->
+    <!--padding: 5px;-->
+    <!--text-align: center;-->
+    <!--border-collapse: collapse;-->
+    <!--border-spacing: 1px;-->
+    <!--color:black;-->
+    <!--background-color:white;-->
+
+<!--}-->
+
+    <!--</style>-->
+
+ <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+<!--https://hdwallsource.com/img/2014/2/farm-wallpaper-16687-17226-hd-wallpapers.jpg-->
+<!--http://d.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/10/3020337-poster-p-1-with-farmplicity-the-farm-to-table-movement-meets-the-21st-century.jpg-->
+
     <style>
-        table, th, td {
-    border:1px solid black;
-    padding: 5px;
-    text-align: center;
-    border-collapse: collapse;
-    border-spacing: 1px;
-    color:black;
-    background-color:white;
 
-}
+    body {
 
-    </style>
+            background-image: url("https://pbs.twimg.com/profile_images/927415345329053697/PQlH6zU4_400x400.jpg"),url(http://d.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/10/3020337-poster-p-1-with-farmplicity-the-farm-to-table-movement-meets-the-21st-century.jpg);
+            background-repeat: no-repeat,no-repeat;
+            background-attachment:fixed,fixed;
+            background-position: top right,center;
+            background-size: 150px,cover;
+
+        }
+form{
+background-color: transparent;
+
+    }
+
+</style>
+</head>
 </head>
 <body>
 <center>
-{% if stack %}
+
+    {% if stack %}
     <table style="width:100%;  ">
         <caption><h3><b>Client Details</b></h3></caption>
+
+    <br>
+    <br>
+    <br>
+        <br>
     <tr>
         <th> <i>Custmer Name</i> </th>
         <th><i> Mobile Number</i></th>

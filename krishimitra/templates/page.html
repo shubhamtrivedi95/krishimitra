@@ -2,25 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>KrishiMitra</title>
+ <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+<!--https://hdwallsource.com/img/2014/2/farm-wallpaper-16687-17226-hd-wallpapers.jpg-->
+<!--http://d.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/10/3020337-poster-p-1-with-farmplicity-the-farm-to-table-movement-meets-the-21st-century.jpg-->
+
+    <style>
+
+    body {
+
+            background-image: url("https://pbs.twimg.com/profile_images/927415345329053697/PQlH6zU4_400x400.jpg"),url(http://d.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/10/3020337-poster-p-1-with-farmplicity-the-farm-to-table-movement-meets-the-21st-century.jpg);
+            background-repeat: no-repeat,no-repeat;
+            background-attachment:fixed,fixed;
+            background-position: top right,center;
+            background-size: 150px,cover;
+
+        }
+form{
+background-color: transparent;
+
+    }
+
+</style>
 </head>
 <body>
-<center>
-<div class="container">
-        <form method="POST" action="/update" align="center" class="form-inline">{% csrf_token %}
 
+<!--<center>-->
+<h2>Welcome to KrishiMitra. A farmers friend.</h2>
+  <br>
+    <br>
+    <br>
+   <form action="/update" method="POST" >
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="farmer" class="col-sm-3 control-label"></label>
+            <div class="col-sm-3">
+                {{ form.as_table }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <button type="submit" class="btn btn-default">
+                    <i class="fa fa-plus"></i> Submit
+                </button>
+            </div>
+        </div>
 
-
-          {{ form.as_p }}
-
-            <button type="submit" align="centre" class="button button1">Submit</button>
-
-
-
-
-   </form>
-
-    </div>
- </center>
+    </form>
+ <!--</center>-->
 </body>
 </html>
