@@ -22,10 +22,11 @@
     <table style="width:100%;  ">
         <caption><h3><b>Client Details</b></h3></caption>
     <tr>
-        <th> <i>CustmerName</i> </th>
-        <th><i> MobileNo</i></th>
+        <th> <i>Custmer Name</i> </th>
+        <th><i> Mobile Number</i></th>
         <th><i>DeviceId</i></th>
         <th><i>Enable</i></th>
+        <th><i>Status</i></th>
     </tr>
     {% for s in stack %}
     <tr>
@@ -33,6 +34,7 @@
         <th>{{ s.MobileNo }}</th>
         <th>{{ s.DeviceId }}</th>
         <th>{{ s.Enable }}</th>
+        <th>{{ s.Status }}</th>
     </tr>
     {% endfor %}
     </table>

@@ -24,4 +24,6 @@ urlpatterns = [
     path('done',views.done),
     path('',views.welcome),
     path('show',views.show),
+    path('response',views.response),
+    path('call',views.call)
 ]
