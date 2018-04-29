@@ -25,9 +25,9 @@ def off(request):
     From=request.GET.get("CallFrom")
     print(From)
     client.objects.filter(MobileNo=From).update(Enable=0)
-    return HttpResponse(From)
+    return HttpResponse("<h2> {f} </h2>".format(f=From))
 
 def done(request):
-    return HttpResponse("<h2> Request Accepted.<h2>")
+    return HttpResponse("<h2> Request Accepted.</h2>")
 def welcome(request):
-    return HttpResponse("<h2>Krishimitra <h2>")
+    return HttpResponse("<h2>Krishimitra </h2>")
