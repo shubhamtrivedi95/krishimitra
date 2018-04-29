@@ -8,7 +8,7 @@ class client(models.Model):
     Enable = models.IntegerField(null=True, blank=True)
     DeviceId=models.IntegerField(unique=True)
     AmtOfWater=models.IntegerField(null=True, blank=True)
-    Status=models.IntegerField(null=True, blank=True)
+    Status=models.CharField(max_length=10, null=True, blank=True)
 
     def __str__(self):
         return "[{},{}]".format(self.CustmerName,self.Enable)

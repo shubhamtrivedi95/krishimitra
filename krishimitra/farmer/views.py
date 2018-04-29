@@ -26,6 +26,7 @@ def on(request):
     From=request.GET.get("CallFrom")
     print(From)
     client.objects.filter(MobileNo=From).update(Enable=1)
+    client.objects.filter(Enable=1).update(Status="Motor On")
     return HttpResponse("<h2> {f} </h2>".format(f=From))
 
 
@@ -33,6 +34,7 @@ def off(request):
     From=request.GET.get("CallFrom")
     print(From)
     client.objects.filter(MobileNo=From).update(Enable=0)
+    client.objects.filter(Enable=0).update(Status="Motor Off")
     return HttpResponse("<h2> {f} </h2>".format(f=From))
 
 
