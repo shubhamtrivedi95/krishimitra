@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class client(models.Model):
 
-    MobileNo = models.IntegerField()
+    MobileNo = models.IntegerField(unique=True)
     CustmerName=models.CharField(max_length=20)
     Enable = models.IntegerField(null=True, blank=True)
     DeviceId=models.IntegerField(unique=True)
