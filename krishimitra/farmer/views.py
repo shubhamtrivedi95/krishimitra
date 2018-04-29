@@ -16,7 +16,7 @@ def post_create(request):
     }
     return render(request,'page.html',context)
 def on(request):
-    From=request.GET.get("From")
+    From=request.GET.get("CallFrom")
     print(From)
     client.objects.filter(MobileNo=From).update(Enable=1)
     return HttpResponse(From)
